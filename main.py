@@ -1,13 +1,22 @@
+import time
+ 
+
 print("Pagina 2022")
+magenta= '\033[35m'
+reset= '\033[39m'
 puntaje = 0
-nombre = input("Ingresa tu nombre:\n")
+nombre = input("Ingresa tu nombre:\n")    
 print("Bienvenido", nombre, ",comienzas con", puntaje,
       "puntos, porfavor realiza la siguiente encuesta.\n")
 
 print("Pregunta 1: ¿Cual es la capital de Colombia?")
+time.sleep(2)
 print("a) Bogota")
+time.sleep(2)
 print("b) Cartagena")
+time.sleep(2)
 print("c) Cali")
+time.sleep(2)
 print("d) Medellin")
 
 rpta1 = input("Ingresa una alternativa:")
@@ -19,30 +28,27 @@ if rpta1 == "a":
     puntaje += 10
     print("Correcto", nombre, ",tienes", puntaje, "puntos")
 
-elif rpta1 == "b":
-    print("Incorrecto", nombre, ",tienes", puntaje, "puntos")
+
 
 elif rpta1 == "x":
-    print("Seleccionaste una alternativa secreta", nombre,
-          ", te damos 100 puntos\n")
+  puntaje+=20
+  print("Descubriste una alternativa secreta",nombre,",obtienes",puntaje,"puntos")
+  
+   
 
-elif rpta1 == "c":
-    print("Incorrecto", nombre, ",tienes", puntaje, "puntos")
+
 
 else:
     print("Incorrecto", nombre, ",tienes", puntaje, "puntos")
 
-print("\nPregunta 2: ¿Cual es la capital de Venezuela?")
+print(magenta,"\nPregunta 2: ¿Cual es la capital de Venezuela?")
 print("a) Lima")
 print("b) Caracas")
 print("c) Montevideo")
-print("d) Berlin")
+print("d) Berlin",reset)
 
 rpta2 = input("Ingresa una alternativa:")
-while rpta2 not in ("a"
-                    "b"
-                    "c"
-                    "d"):
+while rpta2 not in ("a""b""c""d"):
     rpta2 = input(
         "Error, coloca una de las alternativas que estan en la encuesta ")
 
